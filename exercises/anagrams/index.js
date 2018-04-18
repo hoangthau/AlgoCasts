@@ -9,8 +9,8 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-    const strA = stringA.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()\s]/g,"");
-    const strB = stringB.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()\s]/g,"");
+    const strA = stringA.replace(/[^\w]/g,"");
+    const strB = stringB.replace(/[^\w]/g,"");
     const countCharA = countChar(strA);
     const countCharB = countChar(strB);
     const indexCountChar = strA.length > strB.length ? countCharA : countCharB;
